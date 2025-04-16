@@ -15,7 +15,7 @@ router.get('/', BikeController.getAllServices);
 router.get('/:id', BikeController.getServiceById);
 
 router.put(
-  '/:id',
+  '/:id/complete',
   ValidateUserRequest(bikeServiceValidations.updateServiceValidationSchema),
   BikeController.updateService,
 );

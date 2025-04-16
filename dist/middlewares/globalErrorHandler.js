@@ -20,6 +20,10 @@ const globalErrorHandler = (err, req, res, next) => {
             error = err.meta;
         }
     }
+    else if (err instanceof client_1.Prisma.PrismaClientKnownRequestError) {
+        message = err.message || 'Record not found';
+        error = err.meta;
+    }
     res.status(statusCode).json({
         success,
         message,

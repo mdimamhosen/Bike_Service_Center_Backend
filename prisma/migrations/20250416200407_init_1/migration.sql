@@ -7,6 +7,8 @@ CREATE TABLE "customers" (
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
+    "isDeleted" BOOLEAN NOT NULL DEFAULT false,
+    "isActive" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -19,6 +21,7 @@ CREATE TABLE "bikes" (
     "brand" TEXT NOT NULL,
     "model" TEXT NOT NULL,
     "year" INTEGER NOT NULL,
+    "isDeleted" BOOLEAN NOT NULL DEFAULT false,
     "customerId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,

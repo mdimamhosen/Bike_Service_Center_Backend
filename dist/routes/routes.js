@@ -4,22 +4,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const user_routes_1 = require("../modules/User/user.routes");
-const admin_routes_1 = require("../modules/Admin/admin.routes");
-const auth_routes_1 = require("../modules/auth/auth.routes");
+const customers_routes_1 = require("../modules/customer/customers.routes");
+const bikes_routes_1 = require("../modules/bikes/bikes.routes");
+const bikeService_routes_1 = require("../modules/bikeService/bikeService.routes");
 const router = express_1.default.Router();
 const routerModules = [
     {
-        path: '/user',
-        module: user_routes_1.UserRouter,
+        path: '/customers',
+        module: customers_routes_1.CustomerRoutes,
     },
     {
-        path: '/admin',
-        module: admin_routes_1.AdminRouter,
+        path: '/bikes',
+        module: bikes_routes_1.BikeRoutes,
     },
     {
-        path: '/auth',
-        module: auth_routes_1.AuthRoutes,
+        path: '/services',
+        module: bikeService_routes_1.BikeServiceRoutes,
     },
 ];
 routerModules.forEach(route => {
